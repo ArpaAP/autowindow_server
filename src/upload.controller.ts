@@ -1,9 +1,9 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Get } from '@nestjs/common';
 
 @Controller('upload')
 export class UploadController {
   @Get()
-  response(): string {
-    return 'asdf';
+  upload(@Body() data): string {
+    return '';
   }
 }
