@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { UploadController } from './upload.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
+import { UploadModule } from './upload.module';
 
 @Module({
   imports: [
@@ -19,8 +20,9 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
       }),
       inject: [ConfigService],
     }),
+    UploadModule,
   ],
-  controllers: [AppController, UploadController],
+  controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}
