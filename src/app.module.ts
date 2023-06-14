@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UploadController } from './upload.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { UploadModule } from './upload.module';
+import { UploadModule } from './upload/upload.module';
+import { EventsModule } from './events/events.module';
 
 @Module({
   imports: [
@@ -21,6 +21,7 @@ import { UploadModule } from './upload.module';
       inject: [ConfigService],
     }),
     UploadModule,
+    EventsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
